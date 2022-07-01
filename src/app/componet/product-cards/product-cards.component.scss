@@ -1,14 +1,16 @@
 .container{
     display: flex;
     border: solid 1px;
+    border-radius: 8px;
     padding: 8px;
     margin: 8px;
-    border-color: aqua;
+    border-color: rgb(0, 88, 88);
+    height: 120px;
 }
 
 .img{
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
 }
 
 .data{

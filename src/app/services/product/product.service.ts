@@ -7,7 +7,7 @@ import { Product } from 'src/app/model/product';
   providedIn: 'root'
 })
 export class ProductService {
-  private readonly BASE_URL = 'https://62860d1f96bccbf32d6e2bf5.mockapi.io/products'
+  private readonly BASE_URL = 'https://628b2f157886bbbb37b20caa.mockapi.io/products'
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +19,7 @@ export class ProductService {
     if (category) {
       url +=  '&category=' + category;
     }
+    
     return this.http.get<Product[]>(url);
 
   }
