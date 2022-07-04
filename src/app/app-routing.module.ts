@@ -5,13 +5,15 @@ import { ProductDetailComponent } from './componet/product-detail/product-detail
 import { ProductsListComponent } from './componet/products-list/products-list.component';
 import { RegisterComponent } from './componet/register/register.component';
 import { UserDetailComponent } from './componet/user-detail/user-detail.component';
+import { AuthGuard } from './guards/auth/auth.guard';
+import { ProductCardsComponent } from './componet/product-cards/product-cards.component';
 
 const routes: Routes = [
   {path: 'products', component: ProductsListComponent},
   {path: 'product/:id', component: ProductDetailComponent },
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'user', component: UserDetailComponent},
+  {path: 'user', component: UserDetailComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: '**', redirectTo: '/products' }
 ];

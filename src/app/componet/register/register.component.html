@@ -18,8 +18,15 @@
     <label for="password">Password:</label>
     <input id="password" type="text" formControlName='password'>
     <div *ngIf="!registerForm.get('password')!.valid && (registerForm.get('password')!.touched || registerForm.get('password')!.dirty)">
-        <span>Password non inserita o non valida, deve essere di almeno 8 caratteri</span>
+        <span>Password non inserita o non valida, deve essere di almeno 8 caratteri, iniziale maiuscola e contenere almeno un "#"</span>
     </div>
+
+    <label for="password-confirm">Confirm Password:</label>
+    <input id="password-confirm" type="text" formControlName='passwordConfirm'>
+    <div *ngIf="!registerForm.get('passwordConfirm')!.valid && (registerForm.get('passwordConfirm')!.touched || registerForm.get('passwordConfirm')!.dirty)">
+        <span>Password non inserita o non uguale alla precedente</span>
+    </div>
+
 
     <h3>Personal Data</h3>
 
