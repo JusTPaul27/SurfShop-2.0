@@ -1,1 +1,68 @@
-<p>register works!</p>
+<form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+
+    <h3>Account data</h3>
+    <label for="username">Username:</label>
+    <input id="username" type="text" formControlName='username'>
+    <div *ngIf="!registerForm.get('username')!.valid && (registerForm.get('username')!.touched || registerForm.get('username')!.dirty)">
+        <span>username non inserito o non valido</span>
+    </div>
+
+
+    <label for="email">Email:</label>
+    <input id="email" type="text" formControlName='email'>
+    <div *ngIf="!registerForm.get('email')!.valid && (registerForm.get('email')!.touched || registerForm.get('email')!.dirty)">
+        <span>E-mail non inserita o non valida</span>
+    </div>
+
+
+    <label for="password">Password:</label>
+    <input id="password" type="text" formControlName='password'>
+    <div *ngIf="!registerForm.get('password')!.valid && (registerForm.get('password')!.touched || registerForm.get('password')!.dirty)">
+        <span>Password non inserita o non valida, deve essere di almeno 8 caratteri</span>
+    </div>
+
+    <h3>Personal Data</h3>
+
+    <label for="first-name">First name:</label>
+    <input id="first-name" type="text" formControlName='name'>
+    <div *ngIf="!registerForm.get('name')!.valid && (registerForm.get('name')!.touched || registerForm.get('name')!.dirty)">
+        <span>Nome non inserito o non valido</span>
+    </div>
+
+    <label for="last-name">Last name:</label>
+    <input id="last-name" type="text" formControlName='surname'>
+    <div *ngIf="!registerForm.get('surname')!.valid && (registerForm.get('surname')!.touched || registerForm.get('surname')!.dirty)">
+        <span>cognome non inserito o non valido</span>
+    </div>
+
+
+    <label for="dob">Date of birth:</label>
+    <input id="dob" type="date" formControlName='dob'>
+    <div *ngIf="!registerForm.get('dob')!.valid && (registerForm.get('dob')!.touched || registerForm.get('dob')!.dirty)">
+        <span>Data di nascita non inserita o non valida</span>
+    </div>
+
+    <label for="address">Address:</label>
+    <input id="address" type="text" formControlName='address'>
+    <div *ngIf="!registerForm.get('address')!.valid && (registerForm.get('address')!.touched || registerForm.get('address')!.dirty)">
+        <span>Indirizzo non inserito o non valido</span>
+    </div>
+
+    <label for="city">City:</label>
+    <input id="city" type="text" formControlName='city'>
+    <div *ngIf="!registerForm.get('city')!.valid && (registerForm.get('city')!.touched || registerForm.get('city')!.dirty)">
+        <span>Città non inserita o non valida</span>
+    </div>
+
+    <label for="card-number">Card number:</label>
+    <input id="card-number" type="text" formControlName='cardNumber'>
+    <div *ngIf="!registerForm.get('cardNumber')!.valid && (registerForm.get('cardNumber')!.touched || registerForm.get('cardNumber')!.dirty)">
+        <span>Metodo di pagamento non inserito o non valido, deve contenere almeno 12 caratteri </span>
+    </div>
+
+
+
+
+    <button [disabled]="!registerForm.valid" type="submit">Register me</button>
+
+</form>

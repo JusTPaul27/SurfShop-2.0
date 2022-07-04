@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { User } from 'src/app/model/user';
@@ -35,6 +35,11 @@ export class UserService {
   }
 
   register(user: User){
-    
+    const newUser = user;
+    newUser.dob = new Date(newUser.dob);
+    this.http.post<User>(this.BASE_URL, newUser,{headers: new HttpHeaders({'Content-Type': 'application/json'})}).subscribe({
+      next: res => console.log(res),
+      error: err => console.log(err)     
+    })
   }
 }
