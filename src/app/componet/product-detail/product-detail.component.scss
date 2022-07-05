@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    
+}
+
+
+.detail-data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.detail-img{
+    min-width: 350px;
+    width: 50%;
+}
+

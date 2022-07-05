@@ -1,12 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { Product } from 'src/app/model/product';
 import { User } from 'src/app/model/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+
   
   private readonly BASE_URL = 'https://628b2f157886bbbb37b20caa.mockapi.io/users';
   
@@ -41,5 +44,9 @@ export class UserService {
       next: res => console.log(res),
       error: err => console.log(err)     
     })
+  }
+
+  addToCart(product: Product) {
+    
   }
 }
